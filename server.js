@@ -5,7 +5,7 @@ const body = require('body-parser');
 const bodyParser = require('body-parser');
 const { Db } = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
-
+app.set('view engine','ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -19,6 +19,13 @@ app.post('/add',function(request,response){
     Db.collection('post').insertOne({title: ' ', day : '  '}, function(){});
 });
 
+
+app.get('/list', function(requset,response){
+    response.render('list.ejs');
+})
+app.listen('/list',function(requset,response){
+
+})
 MongoClient.connect('', function(error, client){
     if (error) return console.log(error);
     app.listen('8080', function(){
