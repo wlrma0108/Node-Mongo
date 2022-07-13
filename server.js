@@ -22,25 +22,32 @@ app.post('/add',function(request,response){
 
 app.get('/list', function(requset,response){
     response.render('list.ejs');
-})
+});
 app.listen('/list',function(requset,response){
 
-})
+});
+
+
+app.delete('/delete',function(request,response){
+    response.send('DELETE')
+});
+
+
+
 MongoClient.connect('', function(error, client){
     if (error) return console.log(error);
     app.listen('8080', function(){
       console.log('listening on 8080')
       
     });
-  })
+  });
 
-  db.collection('counter').updateOne( {before} , {after} , function(error, result){
+db.collection('counter').updateOne( {before} , {after} , function(error, result){
     console.log('edit')
-  })
+  });
 
 
 
 
 
 
-  
