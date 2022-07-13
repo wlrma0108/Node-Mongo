@@ -16,7 +16,7 @@ app.get('/write',function(request,response){
 
 app.post('/add',function(request,response){
     response.send('post')
-    Db.collection('post').insertOne({title: ' ', day : '  '}, function(){});
+    Db.collection('post').insertOne({_id: total+1 ,title: ' ', day : '  '}, function(){});
 });
 
 
@@ -33,3 +33,14 @@ MongoClient.connect('', function(error, client){
       
     });
   })
+
+  db.collection('counter').updateOne( {before} , {after} , function(error, result){
+    console.log('edit')
+  })
+
+
+
+
+
+
+  

@@ -1,4 +1,27 @@
 <body>
     <h4> title : <%= posts[0].title> </h4>
     <p>  end date : <%=posts[0].data %> </p>
+    
 </body>
+
+<ul class="list-group">
+    <% for (var i = 0; i < posts.length; i++){ %>
+    <li class="list-group-item">
+      <h4> 할일 제목 : <%= posts[i].제목 %> </h4>
+      <p> 할일 마감날짜 : <%= posts[i].날짜 %> </p>
+      <button>삭제</button>
+    </li>
+    <% } %>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+
+  </script>
+
+  <script>
+
+    $.ajax({
+        method : 'DELDTE', url : '/list', data : ''
+    })
+
+  </script>
