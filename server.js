@@ -37,7 +37,7 @@ app.get('/test', function(request, response){
     response.status(404).send('Sorry, we cannot find that!')
     response.sendFile('/uploads/logo.png')
     response.render('list.ejs', {  })
-    response.json(제이슨데이터)
+    response.json()
   });
 
 MongoClient.connect('', function(error, client){
