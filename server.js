@@ -52,7 +52,10 @@ db.collection('counter').updateOne( {before} , {after} , function(error, result)
     console.log('edit')
   });
 
-
+  app.get('/detail/:id', function(request, response){
+    response.render('detail.ejs', {} )
+  });
+  
 
 
 
