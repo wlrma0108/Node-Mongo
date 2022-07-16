@@ -48,7 +48,7 @@ MongoClient.connect('', function(error, client){
     });
   });
 
-db.collection('counter').updateOne( {before} , {after} , function(error, result){
+  db.collection('counter').updateOne( {before} , {after} , function(error, result){
     console.log('edit')
   });
 
