@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const { Db } = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 app.set('view engine','ejs');
-
+app.use('/public', express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
