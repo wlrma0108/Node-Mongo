@@ -57,7 +57,7 @@ MongoClient.connect('', function(error, client){
   });
   
   app.put('/edit', function(request, response){
-    db.collection('post').updateOne( {_id : }, {$set : { 제목 : , 날짜 :  }}, function(){
+    db.collection('post').updateOne( {_id : ''}, {$set : { 제목 : '', 날짜 :  ''}}, function(){
       console.log('edit')
     });
   });
