@@ -64,4 +64,15 @@ MongoClient.connect('', function(error, client){
   });
 
 
+  app.get('/mypage', function(request, response){
+    response.render('mypage.ejs', {} )
+  });
 
+  function loginon( request, response, next){
+    if(request.user){
+      next()
+    }
+    else{
+      response.send('no login')
+    }
+  }
