@@ -76,3 +76,29 @@ MongoClient.connect('', function(error, client){
       response.send('no login')
     }
   }
+
+
+  app.get('/search', (request, response) =>{
+    var searchcondition= [
+    {
+      $search:{
+        index : '',
+        text: {
+          query : request.query.value,
+          paht : "title"
+        }
+      }
+    }
+    ]
+  })
+
+  app.delete('/delete', function(request, response){
+
+    request.body._id = parseInt(request.body._id);
+    db.collection('post').deleteOnd({_id: request.body._id, writer : request.user._id}, function(error, result){
+      console.log('delete end');
+      console.log('error', error)
+      response.status(200).send({message : ' sucessful'});
+    })
+
+  });
